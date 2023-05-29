@@ -1,5 +1,5 @@
 module.exports={
-    MONGOURI:"mongodb+srv://mswMoonDB:gbdIVpTA9Toj0pez@mswyellowavengers.mggin.azure.mongodb.net/<dbname>?retryWrites=true&w=majority",
-    JWT_SECRET:"sfbisdfjsdfkjskdfhqiwuronmxc",
+    MONGOURI:"secret",
+    JWT_SECRET:"secret",
     HASH_KEY:"4"
 }
