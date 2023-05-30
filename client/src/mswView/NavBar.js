@@ -1,10 +1,10 @@
 import React from 'react';
 import Header from '../components/Header/Header'
 import HeaderLinks from '../components/Header/HeaderLinks'
-import { Link, useHistory } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const NavBar = ()=>{
-    const history = useHistory()
+    const navigate = useNavigate()
     return(
         //Header use warning/dark/danger
         <Header
@@ -12,7 +12,7 @@ const NavBar = ()=>{
         color="dark"
         rightLinks={<HeaderLinks />}
         onClick={()=>{
-            history.push('/')
+            navigate.push('/')
           }}
         >
         </Header>

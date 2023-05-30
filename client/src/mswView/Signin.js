@@ -1,13 +1,13 @@
 import React,{useState,useContext,} from "react";
-import {Link, useHistory} from 'react-router-dom'
+import {Link, useNavigate} from 'react-router-dom'
 import {UserContext} from '../App'
 // @material-ui/core components
-import { makeStyles } from "@material-ui/core/styles";
-import InputAdornment from "@material-ui/core/InputAdornment";
-import Icon from "@material-ui/core/Icon";
+import { makeStyles } from "@mui/styles";
+import InputAdornment from "@mui/material/InputAdornment";
+import Icon from "@mui/material/Icon";
 // @material-ui/icons
-import EmojiPeople from "@material-ui/icons/EmojiPeople";
-import Lock from "@material-ui/icons/Lock";
+import EmojiPeople from "@mui/icons-material/EmojiPeople";
+import Lock from "@mui/icons-material/Lock";
 // core components
 import GridContainer from "../components/Grid/GridContainer.js";
 import GridItem from "../components/Grid/GridItem.js";
@@ -26,7 +26,7 @@ const useStyles = makeStyles(styles);
 
 export default function LoginPage(props) {
     const {state,dispatch} = useContext(UserContext)
-  const history = useHistory()
+  const navigate = useNavigate()
   const [cardAnimaton, setCardAnimation] = React.useState("cardHidden");
   const [username,setUsername] = useState("")
   const [password,setPassword] = useState("")
@@ -54,7 +54,7 @@ export default function LoginPage(props) {
           localStorage.setItem("user",JSON.stringify(data.user))
           dispatch({type:"USER",payload:data.user})
           alert("Successfully Login")
-          history.push('./')
+          navigate.push('./')
         }
         
     }).catch(err=>{

@@ -3,14 +3,14 @@ import moment from 'moment'
 // nodejs library that concatenates classes
 import classNames from "classnames";
 // @material-ui/core components
-import { makeStyles } from "@material-ui/core/styles";
+import { makeStyles } from "@mui/styles";
 // @material-ui/icons
-import Face from "@material-ui/icons/Face";
-import SportsKabaddi from "@material-ui/icons/SportsKabaddi"
-import EmojiEvents from "@material-ui/icons/EmojiEvents"
-import Star from "@material-ui/icons/Star"
-import FlashOn from "@material-ui/icons/FlashOn"
-import ChildCare from "@material-ui/icons/ChildCare"
+import Face from "@mui/icons-material/Face";
+import SportsKabaddi from "@mui/icons-material/SportsKabaddi"
+import EmojiEvents from "@mui/icons-material/EmojiEvents"
+import Star from "@mui/icons-material/Star"
+import FlashOn from "@mui/icons-material/FlashOn"
+import ChildCare from "@mui/icons-material/ChildCare"
 
 // core components
 import image from "../assets/img/bg7.jpg";
@@ -27,7 +27,7 @@ import Table from "../components/Table/Table.js";
 import CardHeader from "../components/Card/CardHeader.js";
 
 //Avatar
-import Avatar from '@material-ui/core/Avatar';
+import Avatar from '@mui/material/Avatar';
 
 const useStyles = makeStyles(styles);
 

@@ -4,16 +4,16 @@ import classNames from "classnames";
 // nodejs library to set properties for components
 import PropTypes from "prop-types";
 // @material-ui/core components
-import { makeStyles } from "@material-ui/core/styles";
-import { useHistory } from "react-router-dom";
-import AppBar from "@material-ui/core/AppBar";
-import Toolbar from "@material-ui/core/Toolbar";
-import IconButton from "@material-ui/core/IconButton";
-import Button from "@material-ui/core/Button";
-import Hidden from "@material-ui/core/Hidden";
-import Drawer from "@material-ui/core/Drawer";
+import { makeStyles } from "@mui/styles";
+import { useNavigate } from "react-router-dom";
+import AppBar from "@mui/material/AppBar";
+import Toolbar from "@mui/material/Toolbar";
+import IconButton from "@mui/material/IconButton";
+import Button from "@mui/material/Button";
+import Hidden from "@mui/material/Hidden";
+import Drawer from "@mui/material/Drawer";
 // @material-ui/icons
-import Menu from "@material-ui/icons/Menu";
+import Menu from "@mui/icons-material/Menu";
 // core components
 import styles from "../../assets/jss/material-kit-react/components/headerStyle";
 
@@ -21,7 +21,7 @@ const useStyles = makeStyles(styles);
 
 export default function Header(props) {
   const classes = useStyles();
-  const history = useHistory()
+  const navigate = useNavigate()
   const [mobileOpen, setMobileOpen] = React.useState(false);
   React.useEffect(() => {
     if (props.changeColorOnScroll) {
@@ -62,7 +62,7 @@ export default function Header(props) {
     [classes.absolute]: absolute,
     [classes.fixed]: fixed
   });
-  const brandComponent = <Button className={classes.title} onClick={()=>{history.push('/')}}>{brand}</Button>;
+  const brandComponent = <Button className={classes.title} onClick={()=>{navigate.push('/')}}>{brand}</Button>;
   return (
     <AppBar className={appBarClasses}>
       <Toolbar className={classes.container}>

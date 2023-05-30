@@ -1,19 +1,16 @@
 /*eslint-disable*/
 import React,{useContext} from "react";
-import DeleteIcon from "@material-ui/icons/Delete";
-import IconButton from "@material-ui/core/IconButton";
 // react components for routing our app without refresh
-import { Link, useHistory } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import {UserContext} from '../../App'
 
 // @material-ui/core components
-import { makeStyles } from "@material-ui/core/styles";
-import List from "@material-ui/core/List";
-import ListItem from "@material-ui/core/ListItem";
-import Tooltip from "@material-ui/core/Tooltip";
+import { makeStyles } from "@mui/styles";
+import List from "@mui/material/List";
+import ListItem from "@mui/material/ListItem";
 
 // @material-ui/icons
-import { Apps, CloudDownload,Group, LocalDining,EmojiEmotions,AccountBox,Description,PowerSettingsNew,WbSunny } from "@material-ui/icons";
+import { Group, LocalDining,AccountBox,Description,PowerSettingsNew,WbSunny } from "@mui/icons-material";
 
 // core components
 import CustomDropdown from "../CustomDropdown/CustomDropdown.js"
@@ -45,7 +42,7 @@ export default function HeaderLinks(props) {
                 target="_blank"
                 className={classes.navLink}
                 onClick={()=>{
-                  history.push('/editProfile')
+                  navigate.push('/editProfile')
                 }}
               >
                 <Description className={classes.icons} /> Edit Profile
@@ -66,7 +63,7 @@ export default function HeaderLinks(props) {
               onClick={()=>{
                 localStorage.clear()
                 dispatch({type:"CLEAR"})
-                history.push('/signin')
+                navigate.push('/signin')
               }}
             >
               <PowerSettingsNew className={classes.icons} /> Logout
@@ -92,7 +89,7 @@ export default function HeaderLinks(props) {
                 target="_blank"
                 className={classes.navLink}
                 onClick={()=>{
-                  history.push('/editProfile')
+                  navigate.push('/editProfile')
                 }}
               >
                 <Description className={classes.icons} /> Edit Profile
@@ -104,7 +101,7 @@ export default function HeaderLinks(props) {
               onClick={()=>{
                 localStorage.clear()
                 dispatch({type:"CLEAR"})
-                history.push('/signin')
+                navigate.push('/signin')
               }}
             >
               <PowerSettingsNew className={classes.icons} /> Logout
@@ -122,7 +119,7 @@ export default function HeaderLinks(props) {
             target="_blank"
             className={classes.navLink}
             onClick={()=>{
-              history.push('/signin')
+              navigate.push('/signin')
             }}
           >
           <AccountBox className={classes.icons} /> 登入
@@ -132,7 +129,7 @@ export default function HeaderLinks(props) {
     }
   }
   const classes = useStyles();
-  const history = useHistory()
+  const navigate = useNavigate()
   return (
     <List className={classes.list}>
       <ListItem className={classes.listItem}>      
@@ -141,7 +138,7 @@ export default function HeaderLinks(props) {
           target="_blank"
           className={classes.navLink}
           onClick={()=>{
-            history.push('/clan-member')
+            navigate.push('/clan-member')
           }}
         >
           <Group className={classes.icons} /> 會友
@@ -153,7 +150,7 @@ export default function HeaderLinks(props) {
             target="_blank"
             className={classes.navLink}
             onClick={()=>{
-              history.push('/clan-war')
+              navigate.push('/clan-war')
             }}
           >
           <LocalDining className={classes.icons} /> 軍團戰
@@ -165,7 +162,7 @@ export default function HeaderLinks(props) {
             target="_blank"
             className={classes.navLink}
             onClick={()=>{
-              history.push('/createUser')
+              navigate.push('/createUser')
             }}
           >
           <LocalDining className={classes.icons} /> Admin
@@ -177,7 +174,7 @@ export default function HeaderLinks(props) {
             target="_blank"
             className={classes.navLink}
             onClick={()=>{
-              history.push('/clan-event')
+              navigate.push('/clan-event')
             }}
           >
           <EmojiEmotions className={classes.icons} /> 軍團活動
@@ -189,7 +186,7 @@ export default function HeaderLinks(props) {
             target="_blank"
             className={classes.navLink}
             onClick={()=>{
-              history.push('/clan-war-ranking')
+              navigate.push('/clan-war-ranking')
             }}
           >
           <WbSunny className={classes.icons} /> 排名
@@ -202,7 +199,7 @@ export default function HeaderLinks(props) {
             target="_blank"
             className={classes.navLink}
             onClick={()=>{
-              history.push('/signin')
+              navigate.push('/signin')
             }}
           >
           <AccountBox className={classes.icons} /> 登入
@@ -223,7 +220,7 @@ export default function HeaderLinks(props) {
               target="_blank"
               className={classes.navLink}
               onClick={()=>{
-                history.push('/editProfile')
+                navigate.push('/editProfile')
               }}
             >
               <Description className={classes.icons} /> Edit Profile
@@ -242,7 +239,7 @@ export default function HeaderLinks(props) {
             target="_blank"
             className={classes.navLink}
             onClick={()=>{
-              history.push('/editProfile')
+              navigate.push('/editProfile')
             }}
           >
             <PowerSettingsNew className={classes.icons} /> Logout

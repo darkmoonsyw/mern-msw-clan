@@ -1,7 +1,7 @@
 import { container, title } from "../../assets/jss/material-kit-react.js"
 import imagesStyle from "../../assets/jss/material-kit-react/imagesStyles.js"
 
-import { deepOrange, deepPurple } from '@material-ui/core/colors';
+import { deepOrange, deepPurple } from '@mui/material/colors';
 
 const profilePageStyle = {
   container: {

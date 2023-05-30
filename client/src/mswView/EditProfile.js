@@ -1,13 +1,10 @@
 import React,{useState,useEffect} from "react";
-import Datetime from "react-datetime";
-import {useHistory} from 'react-router-dom'
+import {useNavigate} from 'react-router-dom'
 // @material-ui/core components
-import { makeStyles } from "@material-ui/core/styles";
-import InputAdornment from "@material-ui/core/InputAdornment";
-import Icon from "@material-ui/core/Icon";
+import { makeStyles } from "@mui/styles";
+import InputAdornment from "@mui/material/InputAdornment";
 // @material-ui/icons
-import EmojiPeople from "@material-ui/icons/EmojiPeople";
-import Lock from "@material-ui/icons/Lock";
+import EmojiPeople from "@mui/icons-material/EmojiPeople";
 
 // core components
 import GridContainer from "../components/Grid/GridContainer.js";
@@ -19,17 +16,17 @@ import CardHeader from "../components/Card/CardHeader.js";
 import CardFooter from "../components/Card/CardFooter.js"
 import CustomInput from "../components/CustomInput/CustomInput.js";
 
-import FormControl from "@material-ui/core/FormControl";
+import FormControl from "@mui/material/FormControl";
 
 import styles from "../mswAssets/view/createUserPage";
 
 import image from "../assets/img/bg7.jpg";
-import { InputLabel, Select, MenuItem, Snackbar } from "@material-ui/core";
+import { InputLabel, Select, MenuItem} from "@mui/material";
 
 const useStyles = makeStyles(styles);
 
 export default function CreateUserPage(props) {
-  const history = useHistory()
+  const navigate = useNavigate()
   const [cardAnimaton, setCardAnimation] = React.useState("cardHidden");
   //const [username,setUsername] = useState("")
   //const [password,setPassword] = useState("")
@@ -85,7 +82,7 @@ export default function CreateUserPage(props) {
             currentUser.mainCharacter = mainCharacter
             localStorage.setItem("user",JSON.stringify(currentUser))
             alert(data.message)
-            history.push('./')
+            navigate.push('./')
           }
           
       }).catch(err=>{

@@ -5,15 +5,15 @@ import classNames from "classnames";
 import PropTypes from "prop-types";
 
 // @material-ui/core components
-import { makeStyles } from "@material-ui/core/styles";
-import MenuItem from "@material-ui/core/MenuItem";
-import MenuList from "@material-ui/core/MenuList";
-import ClickAwayListener from "@material-ui/core/ClickAwayListener";
-import Paper from "@material-ui/core/Paper";
-import Grow from "@material-ui/core/Grow";
-import Divider from "@material-ui/core/Divider";
-import Icon from "@material-ui/core/Icon";
-import Popper from "@material-ui/core/Popper";
+import { makeStyles } from "@mui/styles";
+import MenuItem from "@mui/material/MenuItem";
+import MenuList from "@mui/material/MenuList";
+import ClickAwayListener from "@mui/material/ClickAwayListener";
+import Paper from "@mui/material/Paper";
+import Grow from "@mui/material/Grow";
+import Divider from "@mui/material/Divider";
+import Icon from "@mui/material/Icon";
+import Popper from "@mui/material/Popper";
 
 // core components
 import Button from "../CustomButtons/Button.js"

@@ -2,7 +2,7 @@ import React,{useState,useEffect,useContext} from "react";
 // nodejs library that concatenates classes
 import classNames from "classnames";
 // @material-ui/core components
-import { makeStyles } from "@material-ui/core/styles";
+import { makeStyles } from "@mui/styles";
 
 // core components
 import image from "../assets/img/bg7.jpg";
@@ -16,10 +16,6 @@ import styles from "../mswAssets/view/clanMemberPage";
 // table components
 import Table from "../components/Table/Table.js";
 import CardHeader from "../components/Card/CardHeader.js";
-
-//Avatar
-import Avatar from '@material-ui/core/Avatar';
-import { element } from "prop-types";
 
 const useStyles = makeStyles(styles);
 const sortJsonArray = require('sort-json-array')

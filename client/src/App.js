@@ -1,9 +1,7 @@
 import React, {useEffect,createContext,useReducer,useContext} from 'react'
-import { createBrowserHistory } from "history";
-import {Router,Route,Switch,useHistory, BrowserRouter} from 'react-router-dom'
+import {Router,Route,Routes ,useNavigate , BrowserRouter} from 'react-router-dom'
 import './assets/scss/material-kit-react.scss'
-//import "./assets/scss/material-kit-react.scss?v=1.9.0"
-import "./App.css"
+import './App.css';
 
 import NavBar from './mswView/NavBar'
 import ClanEvent from './mswView/ClanEvent'
@@ -21,54 +19,33 @@ import EditProfile from './mswView/EditProfile'
 
 import {reducer,initialState} from "./reducers/userReducer.js"
 
-//var hist = createBrowserHistory();
 export const UserContext = createContext()
 
 const Routing = ()=>{
-  const history = useHistory()
+  const navigate = useNavigate()
   const {state,dispatch} = useContext(UserContext)
   useEffect(()=>{
     const user = JSON.parse(localStorage.getItem("user"))
     if (user){
       dispatch({type:"USER",payload:user})
-      history.push('/')
+      navigate.push('/')
     } else {
-      history.push('/')
+      navigate.push('/')
     }
   },[])
   return(
-    <Switch>
-      <Route exact path="/">
-        <Home/>
-      </Route>
-      <Route path="/signin">
-        <Signin/>
-      </Route>
-      <Route path="/clan-member">
-        <ClanMember/>
-      </Route>
-      <Route path="/clan-war">
-        <ClanWar/>
-      </Route>
-      <Route path="/clan-war-ranking">
-        <ClanWarRanking/>
-      </Route>
-      <Route path="/createUser">
-        <CreateUser/>
-      </Route>
-      <Route path="/createPlayerAccByAdmin">
-        <CreatePlayerAccByAdmin/>
-      </Route>
-      <Route path="/createClanWarRecord">
-        <CreateClanWarRecord/>
-      </Route>
-      <Route path="/editProfile">
-        <EditProfile/>
-      </Route>
-      <Route path="/clan-event">
-        <ClanEvent/>
-      </Route>
-    </Switch>
+    <Routes >
+      <Route exact path="/" element={<Home/>} />
+      <Route path="/signin" element={<Signin/>}/>
+      <Route path="/clan-member" element={<ClanMember/>}/>
+      <Route path="/clan-war" element={<ClanWar/>}/>
+      <Route path="/clan-war-ranking" element={<ClanWarRanking/>}/>
+      <Route path="/createUser" element={<CreateUser/>}/>
+      <Route path="/createPlayerAccByAdmin" element={<CreatePlayerAccByAdmin/>}/>
+      <Route path="/createClanWarRecord" element={<CreateClanWarRecord/>}/>
+      <Route path="/editProfile" element={<EditProfile/>}/>
+      <Route path="/clan-event" element={<ClanEvent/>}/>
+    </Routes >
   )
 }
 
